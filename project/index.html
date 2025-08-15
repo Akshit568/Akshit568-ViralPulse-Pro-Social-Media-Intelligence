@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ViralPulse Pro - Social Media Intelligence Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <div class="main-header">
+            <h1 class="main-title">ViralPulse Pro</h1>
+            <p class="subtitle">🌊 Social Media Intelligence Hub • Real-time Trend Analysis & Conflict Detection</p>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="nav-menu">
+            <button class="nav-btn active" data-tab="war-room">🌍 War Room</button>
+            <button class="nav-btn" data-tab="conflict">⚔️ Conflict Detector</button>
+            <button class="nav-btn" data-tab="rag">🧠 RAG Engine</button>
+            <button class="nav-btn" data-tab="alerts">🔔 Alert Center</button>
+            <button class="nav-btn" data-tab="technical">⚙️ Technical</button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- War Room Tab -->
+            <div id="war-room" class="tab-content active">
+                <div class="metrics-row">
+                    <div class="metric-card">
+                        <div class="metric-value">2,847</div>
+                        <div class="metric-label">Active Trends</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">73%</div>
+                        <div class="metric-label">Controversy Score</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">156M</div>
+                        <div class="metric-label">Total Reach</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value pulse-animation">🔴 LIVE</div>
+                        <div class="metric-label">Status</div>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="glass-card large">
+                        <h3>🗺️ Global Trend Heatmap</h3>
+                        <div id="heatmap" class="chart-container"></div>
+                    </div>
+                    
+                    <div class="glass-card">
+                        <h3>🔥 Trending Now</h3>
+                        <div id="trending-list" class="trending-container"></div>
+                    </div>
+                </div>
+
+                <div class="glass-card">
+                    <h3>🧬 Trend DNA Radar</h3>
+                    <div id="radar-chart" class="chart-container"></div>
+                </div>
+            </div>
+
+            <!-- Conflict Detector Tab -->
+            <div id="conflict" class="tab-content">
+                <div class="conflict-grid">
+                    <div class="glass-card">
+                        <h3>🎯 Select Trend</h3>
+                        <select id="trend-selector" class="trend-select">
+                            <option value="">#AIethics</option>
+                            <option value="">#ClimateAction</option>
+                            <option value="">#TechDebate</option>
+                            <option value="">#GamersUnite</option>
+                        </select>
+                        <button id="analyze-btn" class="analyze-button">🔍 Analyze Conflict</button>
+                    </div>
+
+                    <div class="glass-card large">
+                        <h3>📊 Opposition Analysis</h3>
+                        <div id="conflict-results" class="conflict-results">
+                            <div class="viewpoint-split">
+                                <div class="pro-side">
+                                    <div class="percentage">✅ 62%</div>
+                                    <div class="label">Supporting</div>
+                                </div>
+                                <div class="con-side">
+                                    <div class="percentage">❌ 38%</div>
+                                    <div class="label">Opposing</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card">
+                    <h3>💬 Key Influencer Quotes</h3>
+                    <div id="quotes-container" class="quotes-grid"></div>
+                </div>
+            </div>
+
+            <!-- RAG Engine Tab -->
+            <div id="rag" class="tab-content">
+                <div class="rag-grid">
+                    <div class="glass-card">
+                        <h3>🔍 Query Interface</h3>
+                        <input type="text" id="rag-query" placeholder="e.g., Analyze the cultural impact of #AIethics" class="rag-input">
+                        <button id="rag-analyze" class="analyze-button">🚀 Generate Analysis</button>
+                        
+                        <div class="pipeline-status">
+                            <h4>⚙️ Pipeline Status</h4>
+                            <div class="pipeline-step">
+                                <span>✅ Retrieve</span>
+                                <span class="time">0.2s</span>
+                            </div>
+                            <div class="pipeline-step">
+                                <span>✅ Contextualize</span>
+                                <span class="time">0.4s</span>
+                            </div>
+                            <div class="pipeline-step">
+                                <span>✅ Generate</span>
+                                <span class="time">0.2s</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card large">
+                        <h3>📚 Retrieved Chunks</h3>
+                        <div id="rag-chunks" class="chunks-container"></div>
+                    </div>
+                </div>
+
+                <div class="glass-card">
+                    <h3>🎯 Cultural Analysis</h3>
+                    <div id="rag-analysis" class="analysis-container"></div>
+                </div>
+            </div>
+
+            <!-- Alert Center Tab -->
+            <div id="alerts" class="tab-content">
+                <div class="alerts-grid">
+                    <div class="glass-card">
+                        <h3>➕ Create New Alert</h3>
+                        <div class="alert-form">
+                            <select class="form-input">
+                                <option>Controversy Score</option>
+                                <option>Sentiment Shift</option>
+                                <option>Viral Threshold</option>
+                            </select>
+                            <input type="range" min="0" max="100" value="80" class="slider">
+                            <input type="text" placeholder="Keywords (comma-separated)" class="form-input">
+                            <button class="create-alert-btn">🔔 Create Alert</button>
+                        </div>
+                    </div>
+
+                    <div class="glass-card">
+                        <h3>📱 Live Notifications</h3>
+                        <div id="notifications" class="notifications-container"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Tab -->
+            <div id="technical" class="tab-content">
+                <div class="tech-metrics">
+                    <div class="tech-metric">
+                        <div class="metric-value">0.8s</div>
+                        <div class="metric-label">Avg Latency</div>
+                    </div>
+                    <div class="tech-metric">
+                        <div class="metric-value">0.94</div>
+                        <div class="metric-label">RAGAS Score</div>
+                    </div>
+                    <div class="tech-metric">
+                        <div class="metric-value">42%</div>
+                        <div class="metric-label">Better Than Keywords</div>
+                    </div>
+                    <div class="tech-metric">
+                        <div class="metric-value">99.2%</div>
+                        <div class="metric-label">Uptime</div>
+                    </div>
+                </div>
+
+                <div class="glass-card">
+                    <h3>🏗️ System Architecture</h3>
+                    <div id="architecture-diagram" class="architecture-container"></div>
+                </div>
+
+                <div class="glass-card">
+                    <h3>💻 Conflict Detection Algorithm</h3>
+                    <pre class="code-block"><code>def detect_conflict(trend):
+    # Get embeddings for all posts
+    cluster_embeddings = sentence_transformer(posts)
+    
+    # Use DBSCAN for density-based opposition grouping
+    pro, con = dbscan_clustering(cluster_embeddings)
+    
+    # Calculate controversy score
+    controversy_score = (len(con) / (len(pro) + 1e-9)) * sentiment_variance(pro, con)
+    
+    # Extract key quotes from each cluster
+    key_quotes_pro = extract_representative_quotes(pro)
+    key_quotes_con = extract_representative_quotes(con)
+    
+    return {
+        'controversy_score': controversy_score,
+        'pro_quotes': key_quotes_pro,
+        'con_quotes': key_quotes_con,
+        'pro_percentage': len(pro) / (len(pro) + len(con)) * 100,
+        'con_percentage': len(con) / (len(pro) + len(con)) * 100
+    }</code></pre>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="testimonial">
+                <div class="testimonial-text">
+                    "ViralPulse predicted the #Xbox backlash 12hrs early! Incredible accuracy."
+                </div>
+                <div class="testimonial-author">— @GamingAnalyst</div>
+                <div class="demo-link">
+                    🎬 <a href="#" class="demo-video-link">Watch 30s Demo Video</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.32.0.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="script.js"></script>
+</body>
+</html>
